@@ -17,6 +17,12 @@ function Header() {
                 className='navLink'
                 to={'/about'}>About
             </NavLink>
+            <NavLink
+                exact
+                activeClassName='active'
+                className='navLink'
+                to={'/login'}>Add Art
+            </NavLink>
         </header>
     )
 }
