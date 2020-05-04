@@ -1,0 +1,23 @@
+.App {
+  text-align: center;
+  display: grid;
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+  grid-template-columns: 1fr;
+  grid-template-rows: 10vh 1fr 5vh;
+  height: 100vh;
+}
+
+Header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+}
+
+Footer {
+  grid-area: footer;
+}
