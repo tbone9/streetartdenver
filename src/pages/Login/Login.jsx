@@ -1,43 +1,42 @@
-import React, { Component } from 'react';
-import './styles.css';
+import React, { useCallback, useContext } from 'react';
+import { withRouter, Redirect } from 'react-router';
+import app from '../../firebase';
+import { AuthContext } from '../../Auth/Auth';
+import '../formStyles.css';
 
-class Login extends Component {
-    constructor() {
-        super();
-        this.state = {
-            email: '',
-            password: ''
-        }
+const Login = ({ history }) => {
+    const handleLogin = useCallback(
+        async event => {
+            event.preventDefault();
+            const { email, password } = event.target.elements;
+            try {
+                await app
+                    .auth()
+                    .signInWithEmailAndPassword(email.value, password.value);
+                history.push('/addart');
+            } catch (error) {
+                alert(error);
+            }
+        },
+        [history]
+    );
+
+    const { currentUser } = useContext(AuthContext);
+
+    if (currentUser) {
+        return <Redirect to='/addart' />
     }
 
+    return (
+        <div className='formContainer'>
+            <form onSubmit={handleLogin}>
+                <input required type='email' placeholder='Email' name='email' />
+                <input required type='password' placeholder='Password' name='password' />
+                <button type='submit'>Submit</button>
+            </form>
+        </div>
+    )
 
-    handleChange = (e) => {
-        this.setState({
-            [e.target.name]: e.target.value
-        });
-    }
-
-    handleLogin = (e) => {
-        e.preventDefault();
-        alert('Looks good!');
-        this.props.history.push('/addart');
-    }
-
-    isLoginInvalid() {
-        return !(this.state.email && this.state.password);
-    }
-
-    render() {
-        return (
-            <div className='formContainer'>
-                <form onSubmit={this.handleLogin}>
-                    <input required type='email' placeholder='Email' name='email' onChange={this.handleChange} />
-                    <input required type='password' placeholder='Password' name='password' onChange={this.handleChange} />
-                    <button disabled={this.isLoginInvalid()} type='submit'>Submit</button>
-                </form>
-            </div>
-        )
-    }
 }
 
-export default Login;
+export default withRouter(Login);

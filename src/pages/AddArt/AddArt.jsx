@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './styles.css';
+import '../formStyles.css';
+import app from '../../firebase';
 
 class AddArt extends Component {
 
@@ -37,7 +38,11 @@ class AddArt extends Component {
                 })
             }
         }
+    }
 
+    handleLogOut = () => {
+        app.auth().signOut();
+        this.props.history.push('/');
     }
 
     render() {
@@ -62,6 +67,7 @@ class AddArt extends Component {
                         <button type='submit'>Add</button>
                     </form>
                 </div>
+                <button onClick={this.handleLogOut}>Sign Out</button>
             </>
         )
     }
