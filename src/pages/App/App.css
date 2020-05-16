@@ -7,23 +7,27 @@
     'main'
     'footer';
   grid-template-columns: 1fr;
-  grid-template-rows: 10vh 1fr 5vh;
+  grid-template-rows: 10vh 1fr 3vh;
   height: 100vh;
+  width: 100%;
+  position: fixed;
 }
 
 Header {
   grid-area: header;
+  height: 100%;
+  width: 100%;
 }
 
 main {
   position: absolute;
   grid-area: main;
-  right: 0;
-  left: 0;
+  height: 100%;
 }
 
 Footer {
   grid-area: footer;
+  text-align: center;
 }
 
 .fade-appear

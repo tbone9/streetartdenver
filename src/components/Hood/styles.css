@@ -1,7 +1,8 @@
 .hood {
     border: 2px solid white;
     background: rgba(255, 255, 255, 0.322);
-    width: 20vmin;
+    width: 20rem;
+    height: 10rem;
     display: flex;
     justify-content: center;
     align-items: center;
