@@ -56,7 +56,7 @@ class AddArt extends Component {
                         <input type='date' name='date' onChange={this.handleChange} />
                         <input type='text' placeholder='Description' name='description' onChange={this.handleChange} />
                         <select name='neighborhood' onChange={this.handleChange}>
-                            <option value='Cherry Creek Path'>Cherry Creek Path</option>
+                            <option value='Cherry Creek Trail'>Cherry Creek Trail</option>
                             <option value='Lincoln Park'>Lincoln Park</option>
                             <option value='Baker'>Baker</option>
                             <option value='Speer'>Speer</option>

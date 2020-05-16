@@ -1,3 +1,21 @@
-.header {
-    background: lightgrey;
+header {
+    border: 2px solid black;
+    text-align: center;
+    width: 100%;
+}
+
+nav {
+    border: 2px solid white;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navLink {
+    margin: 10px;
+    padding: 5px;
+    border: 2px solid white;
+    text-decoration: none;
+    color: white;
 }

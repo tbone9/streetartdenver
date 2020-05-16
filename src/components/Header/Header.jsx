@@ -4,25 +4,27 @@ import './styles.css';
 
 function Header() {
     return (
-        <header className='header'>
-            <NavLink
-                exact
-                activeClassName='active'
-                className='navLink'
-                to={'/'}>Home
-            </NavLink>
-            <NavLink
-                exact
-                activeClassName='active'
-                className='navLink'
-                to={'/about'}>About
-            </NavLink>
-            <NavLink
-                exact
-                activeClassName='active'
-                className='navLink'
-                to={'/login'}>Add Art
-            </NavLink>
+        <header>
+            <nav>
+                <NavLink className='navLink'
+                    exact
+                    activeClassName='active'
+                    className='navLink'
+                    to={'/'}>Home
+                </NavLink>
+                <NavLink className='navLink'
+                    exact
+                    activeClassName='active'
+                    className='navLink'
+                    to={'/about'}>About
+                </NavLink>
+                <NavLink className='navLink'
+                    exact
+                    activeClassName='active'
+                    className='navLink'
+                    to={'/login'}>Add Art
+                </NavLink>
+            </nav>
         </header>
     )
 }

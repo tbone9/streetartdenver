@@ -1,0 +1,15 @@
+.hoodContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    width: 100%;
+    border: 2px solid red;
+    height: 60vh;
+}
+
+#pageTitle {
+    color: white;
+    width: 100%;
+    text-align: center;
+}
