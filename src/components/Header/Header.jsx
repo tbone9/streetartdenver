@@ -9,19 +9,16 @@ function Header() {
                 <NavLink className='navLink'
                     exact
                     activeClassName='active'
-                    className='navLink'
                     to={'/'}>Home
                 </NavLink>
                 <NavLink className='navLink'
                     exact
                     activeClassName='active'
-                    className='navLink'
                     to={'/about'}>About
                 </NavLink>
                 <NavLink className='navLink'
                     exact
                     activeClassName='active'
-                    className='navLink'
                     to={'/login'}>Add Art
                 </NavLink>
             </nav>

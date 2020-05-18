@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import '../formStyles.css';
 import app from '../../firebase';
+import firebase from '../../firebase';
+import { storage } from '../../firebase';
 
 class AddArt extends Component {
 
@@ -25,7 +27,7 @@ class AddArt extends Component {
     handleImageChange = e => {
         if (e.target.files[0]) {
             const image = e.target.files[0];
-            if (image.type === 'image/jpeg' && image.size < 2100000) {
+            if (image.type === 'image/jpeg') {
                 this.setState(() => ({
                     image: image,
                     errMsg: ''
@@ -34,9 +36,65 @@ class AddArt extends Component {
                 this.handleUpload(image);
             } else {
                 this.setState({
-                    errMsg: 'Upload is either too big or not an image!'
+                    errMsg: 'Upload is not an image!'
                 })
             }
+        }
+    }
+
+    handleUpload = async (image) => {
+
+        const uploadTask = storage.ref(`images/${image.name}`).put(image);
+        uploadTask.on(
+            "state_changed",
+            snapshot => {
+                // progress function ...
+                const progress = Math.round(
+                    (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+                );
+                this.setState({ progress });
+            },
+            error => {
+                // Error function ...
+                console.log(error);
+            },
+            () => {
+                // complete function ...
+                storage
+                    .ref("images")
+                    .child(image.name)
+                    .getDownloadURL()
+                    .then(url => {
+                        this.setState({ imageURL: url });
+                    });
+            }
+        );
+
+    };
+
+    handleSubmit = e => {
+        try {
+            e.preventDefault();
+            firebase
+                .firestore()
+                .collection('art')
+                .add({
+                    date: this.state.date,
+                    title: this.state.title,
+                    description: this.state.description,
+                    imageURL: this.state.imageURL
+                })
+                .then(() =>
+                    this.setState({
+                        date: '',
+                        title: '',
+                        description: '',
+                        imageURL: ''
+                    }))
+                .then(console.log('art added!'))
+
+        } catch (error) {
+            console.log(error);
         }
     }
 
@@ -50,7 +108,7 @@ class AddArt extends Component {
             <>
                 <h2>Add a Piece of Art</h2>
                 <div className='formContainer'>
-                    <form>
+                    <form onSubmit={this.handleSubmit}>
                         <input type='text' placeholder='Title' name='title' onChange={this.handleChange} />
                         <input type='text' placeholder='Artist' name='artist' onChange={this.handleChange} />
                         <input type='date' name='date' onChange={this.handleChange} />
@@ -63,7 +121,11 @@ class AddArt extends Component {
                             <option value='LoDo'>LoDo</option>
                             <option value='Five Points'>Five Points</option>
                         </select>
-                        <input type='file' accept="image/*" onChange={this.handleImageChange} />
+                        <input type='file' accept="image/*" onChange={this.handleImageChange} /> <br></br>
+                        {this.state.errMsg ? <p>{this.state.errMsg}</p> :
+                            <progress value={this.state.progress} max='100' />
+                        }
+
                         <button type='submit'>Add</button>
                     </form>
                 </div>

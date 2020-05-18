@@ -1,5 +1,6 @@
 import React from 'react';
 import Hood from '../../components/Hood/Hood';
+import { Link } from 'react-router-dom';
 import './styles.css';
 
 function MainPage() {
@@ -11,7 +12,7 @@ function MainPage() {
             <h1 id='pageTitle'>Denver Street Art</h1>
             <div className='hoodContainer'>
                 {hoods.map((hood, i) => (
-                    <Hood name={hood} key={i} />
+                    <Link key={i} to={{ pathname: '/hoodPage', name: { hood } }}><Hood name={hood} key={i} /> </Link>
                 ))}
             </div>
         </div>
