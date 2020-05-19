@@ -1,8 +1,37 @@
-h2 {
-    color: white;
+#hoodPageContainer {
+    /* display: flex; */
+    text-align: center;
+}
+#hoodInnerContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    transition: transform .5s;
+}
+/* #hoodInnerContainer:hover {
+    transform: scale(1.5);
+} */
+#hoodInnerContainer div {
+    position: relative;
+    text-align: center;
 }
 
-img {
-    min-width: 20vw;
-    max-width: 30vw;
+.pieceTitle {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
 }
+
+/* img {
+    width: auto;
+    height: 200px;
+    transition: transform .5s;
+    
+}
+img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+} */

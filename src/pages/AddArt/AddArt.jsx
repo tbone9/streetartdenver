@@ -82,7 +82,9 @@ class AddArt extends Component {
                     date: this.state.date,
                     title: this.state.title,
                     description: this.state.description,
-                    imageURL: this.state.imageURL
+                    imageURL: this.state.imageURL,
+                    artist: this.state.artist,
+                    neighborhood: this.state.neighborhood
                 })
                 .then(() =>
                     this.setState({

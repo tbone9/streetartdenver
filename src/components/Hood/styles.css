@@ -1,10 +1,15 @@
 .hood {
     border: 2px solid white;
-    background: rgba(255, 255, 255, 0.322);
-    width: 20rem;
-    height: 10rem;
+    background: rgba(255, 255, 255, 0.171);
+    width: 350px;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.hood:hover {
+    background: rgba(255, 255, 255, 0.568);
+
 }

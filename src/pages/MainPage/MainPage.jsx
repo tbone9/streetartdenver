@@ -3,7 +3,7 @@ import Hood from '../../components/Hood/Hood';
 import { Link } from 'react-router-dom';
 import './styles.css';
 
-function MainPage() {
+function MainPage(props) {
 
     const hoods = ['Cherry Creek Trail', 'Lincoln Park', 'Baker', 'Speer', 'LoDo', 'Five Points']
 
@@ -12,7 +12,7 @@ function MainPage() {
             <h1 id='pageTitle'>Denver Street Art</h1>
             <div className='hoodContainer'>
                 {hoods.map((hood, i) => (
-                    <Link key={i} to={{ pathname: '/hoodPage', name: { hood } }}><Hood name={hood} key={i} /> </Link>
+                    <Link className='hoodLink' key={i} to={{ pathname: '/hoodPage', name: { hood } }}><Hood name={hood} key={i} /> </Link>
                 ))}
             </div>
         </div>
