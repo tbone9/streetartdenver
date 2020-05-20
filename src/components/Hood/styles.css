@@ -1,6 +1,6 @@
 .hood {
     border: 2px solid white;
-    background: rgba(255, 255, 255, 0.171);
+    background: rgba(95, 95, 95, 0.322);
     width: 350px;
     height: 100%;
     display: flex;
@@ -10,6 +10,10 @@
 }
 
 .hood:hover {
-    background: rgba(255, 255, 255, 0.568);
+    background: rgba(36, 35, 35, 0.568);
 
+}
+
+.hood h2 {
+    color: white;
 }

@@ -2,18 +2,18 @@ import React, { useState, useEffect } from 'react';
 import firebase from '../../firebase';
 import './styles.css';
 import ArtThumb from '../../components/ArtThumb/ArtThumb';
-// import useModal from '../../Hooks/useModal';
-// import ArtModal from '../../components/ArtModal/ArtModal';
 
-function GetArt() {
+function GetArt(props) {
+    console.log(props, 'props')
     const [art, setArt] = useState([]);
 
     useEffect(() => {
-
+        const hood = props.location.name.hood
         const unsubscribe =
             firebase
                 .firestore()
                 .collection('art')
+                .where('neighborhood', '==', hood)
                 .onSnapshot((snapshot) => {
                     const newArt = snapshot.docs.map((doc) => ({
                         id: doc.id,
@@ -22,6 +22,7 @@ function GetArt() {
                     setArt(newArt);
                 })
         return () => unsubscribe();
+
     }, []);
 
     console.log(art)
@@ -30,23 +31,16 @@ function GetArt() {
 };
 
 
-
 function HoodPage(props) {
-    const art = GetArt();
-    // const { isShowing, toggle } = useModal();
+
+    const art = GetArt(props);
     return (
         <div id='hoodPageContainer'>
             <h2>{props.location.name.hood}</h2>
             <div id='hoodInnerContainer'>
                 {art.map(piece => (
                     <ArtThumb piece={piece} />
-                    // <>
-                    //     <div key={piece.id} onClick={toggle}>
-                    //         <img src={piece.imageURL} alt={piece.description}></img>
-                    //         <ArtModal art={piece} isShowing={isShowing} hide={toggle} />
-                    //     </div>
 
-                    // </>
                 ))}
             </div>
 

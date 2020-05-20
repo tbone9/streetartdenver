@@ -1,37 +1,24 @@
 #hoodPageContainer {
-    /* display: flex; */
     text-align: center;
+}
+#hoodPageContainer h2 {
+    height: 40px;
+    font-family: 'Shadows Into Light', cursive;
+    letter-spacing: 2px;
+    color: white;
 }
 #hoodInnerContainer {
     display: flex;
     width: 100%;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     transition: transform .5s;
+    overflow: scroll;
+    height: 80vh;
+    margin-top: 2%;
 }
-/* #hoodInnerContainer:hover {
-    transform: scale(1.5);
-} */
+
 #hoodInnerContainer div {
     position: relative;
     text-align: center;
 }
-
-.pieceTitle {
-    color: white;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-}
-
-/* img {
-    width: auto;
-    height: 200px;
-    transition: transform .5s;
-    
-}
-img:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-} */

@@ -1,11 +1,9 @@
 header {
-    border: 2px solid black;
     text-align: center;
     width: 100%;
 }
 
 nav {
-    border: 2px solid white;
     height: 100%;
     display: flex;
     align-items: center;

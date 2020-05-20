@@ -4,7 +4,7 @@ import './styles.css';
 function Footer() {
     return (
         <footer>
-            <span>Created by Tbone</span>
+            <span>2020 by Tbone</span>
         </footer>
     )
 }

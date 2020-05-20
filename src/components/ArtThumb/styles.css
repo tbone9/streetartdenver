@@ -1,10 +1,12 @@
 .thumb {
-    width: auto;
+    max-width: 95%;
     height: 200px;
     transition: transform .5s;
-    
+    border: 2px solid white;
+    margin: 2px;
+    opacity: .85;
 }
 .thumb:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     cursor: pointer;
 }

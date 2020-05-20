@@ -1,3 +1,7 @@
 footer {
     background: rgba(129, 129, 129, 0.486);
+
+}
+footer span {
+    color: white;
 }
