@@ -23,7 +23,7 @@ function GetArt(props) {
                 })
         return () => unsubscribe();
 
-    }, []);
+    });
 
     console.log(art)
 

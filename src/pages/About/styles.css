@@ -1,0 +1,17 @@
+#aboutContainer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#aboutContainer h2 {
+    text-align: center;
+    margin: 10px;
+    color: white;
+}
+
+.contentContainer {
+    margin: 0 3%;
+    background: rgba(255, 255, 255, 0.397);
+    padding: 2%;
+}
