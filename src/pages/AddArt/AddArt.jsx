@@ -128,7 +128,7 @@ class AddArt extends Component {
                             <progress value={this.state.progress} max='100' />
                         }
 
-                        <button type='submit'>Add</button>
+                        <button className='formButton' type='submit'>Add</button>
                     </form>
                 </div>
                 <button onClick={this.handleLogOut}>Sign Out</button>

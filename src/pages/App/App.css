@@ -49,3 +49,9 @@ Footer {
   transition: opacity 150ms linear;
 }
 
+h2 {
+  text-align: center;
+  color: white;
+  letter-spacing: 2px;
+}
+
