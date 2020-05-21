@@ -39,14 +39,14 @@ Footer {
 .fade-appear-active
 .fade-enter.fade-enter-active {
   opacity: 1;
-  transition: opacity 300ms linear 150ms;
+  transition: opacity 450ms linear 150ms;
 }
 .fade-exit {
   opacity: 1;
 }
 .fade-exit.fade-exit-active {
   opacity: 0;
-  transition: opacity 150ms linear;
+  transition: opacity 300ms linear;
 }
 
 h2 {
