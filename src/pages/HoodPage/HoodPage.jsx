@@ -6,11 +6,9 @@ import ArtThumb from '../../components/ArtThumb/ArtThumb';
 function GetArt(props) {
 
     const [art, setArt] = useState([]);
-    console.log(props, 'props')
     useEffect(() => {
         const hood = props.location.name.hood
         // const unsubscribe =
-        console.log('running')
         firebase
             .firestore()
             .collection('art')

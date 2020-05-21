@@ -11,7 +11,7 @@ class AddArt extends Component {
         artist: '',
         date: '',
         description: '',
-        neighborhood: '',
+        neighborhood: 'Cherry Creek Trail',
         imageURL: '',
         image: null,
         progress: 0,
@@ -105,10 +105,22 @@ class AddArt extends Component {
         this.props.history.push('/');
     }
 
+    isFormInvalid = () => {
+        return !(this.state.imageURL);
+    }
+
     render() {
         return (
             <div className='formPageContainer'>
                 <h2>Add a Piece of Art</h2>
+                <div className='contentContainer'>
+                    <p>Instructions</p>
+                    <ol>
+                        <li>Every submission must have at least an image and neighborhood.</li>
+                        <li>Prior to submitting photos, make sure art is centered and cropped appropriately.</li>
+                        <li>Compress photo with <a href='https://tinyjpg.com/' target='_blank' rel='noopener noreferrer'>Tinyjpg.</a></li>
+                    </ol>
+                </div>
                 <div className='formContainer'>
                     <form onSubmit={this.handleSubmit}>
                         <input type='text' placeholder='Title' name='title' onChange={this.handleChange} />
@@ -128,7 +140,7 @@ class AddArt extends Component {
                             <progress value={this.state.progress} max='100' />
                         }
 
-                        <button className='formButton' type='submit'>Add</button>
+                        <button className='formButton' type='submit' disabled={this.isFormInvalid()}>Add</button>
                     </form>
                     <button className='formButton' onClick={this.handleLogOut}>Sign Out</button>
                 </div>

@@ -28,11 +28,11 @@
   position: relative;
   margin: 1.75rem auto;
   border-radius: 3px;
-  max-width: 80%;
+  max-width: 90%;
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  height: 80%;
+  height: 90%;
   align-items: center;
 }
 

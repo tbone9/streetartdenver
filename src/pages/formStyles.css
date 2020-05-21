@@ -6,7 +6,7 @@
     justify-content: center;
 }
 .formContainer {
-    margin: 5%;
+    margin: 1%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -57,3 +57,4 @@ progress {
     background: rgba(51, 55, 59, 0.863);
     width: 100%;
 }
+
