@@ -9,19 +9,20 @@ function GetArt(props) {
 
     useEffect(() => {
         const hood = props.location.name.hood
-        const unsubscribe =
-            firebase
-                .firestore()
-                .collection('art')
-                .where('neighborhood', '==', hood)
-                .onSnapshot((snapshot) => {
-                    const newArt = snapshot.docs.map((doc) => ({
-                        id: doc.id,
-                        ...doc.data()
-                    }))
-                    setArt(newArt);
-                })
-        return () => unsubscribe();
+        // const unsubscribe =
+        firebase
+            .firestore()
+            .collection('art')
+            .where('neighborhood', '==', hood)
+            .onSnapshot((snapshot) => {
+                const newArt = snapshot.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data()
+                }))
+                setArt(newArt);
+            })
+        return
+        // () => unsubscribe();
 
     });
 
