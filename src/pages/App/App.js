@@ -15,6 +15,8 @@ import PrivateRoute from '../../PrivateRoute/PrivateRoute';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
+// import analytics from '../../firebase';
+
 function App() {
   return (
     <div className="App">

@@ -28,14 +28,16 @@ const Login = ({ history }) => {
     }
 
     return (
-        <div className='formContainer'>
+        <div className='formPageContainer'>
             <h2>Add a Piece of Art</h2>
             <p>Gotta have credentials. If you aren't me, you won't get past this point. There is no way to create a user.</p>
-            <form onSubmit={handleLogin}>
-                <input required type='email' placeholder='Email' name='email' />
-                <input required type='password' placeholder='Password' name='password' />
-                <button className='formButton' type='submit'>Submit</button>
-            </form>
+            <div className='formContainer'>
+                <form onSubmit={handleLogin}>
+                    <input required type='email' placeholder='Email' name='email' />
+                    <input required type='password' placeholder='Password' name='password' />
+                    <button className='formButton' type='submit'>Submit</button>
+                </form>
+            </div>
         </div>
     )
 

@@ -1,8 +1,22 @@
+.formPageContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 .formContainer {
+    margin: 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100%;
+    width: fit-content;
+    color: white;
+    background: rgba(255, 255, 255, 0.568);
+}
+
+.formPageContainer p {
     color: white;
 }
 
@@ -29,6 +43,7 @@ input {
     color: white;
     font-weight: 800;
     letter-spacing: 2px;
+    cursor: pointer;
 }
 
 select {

@@ -107,7 +107,7 @@ class AddArt extends Component {
 
     render() {
         return (
-            <>
+            <div className='formPageContainer'>
                 <h2>Add a Piece of Art</h2>
                 <div className='formContainer'>
                     <form onSubmit={this.handleSubmit}>
@@ -130,9 +130,9 @@ class AddArt extends Component {
 
                         <button className='formButton' type='submit'>Add</button>
                     </form>
+                    <button className='formButton' onClick={this.handleLogOut}>Sign Out</button>
                 </div>
-                <button onClick={this.handleLogOut}>Sign Out</button>
-            </>
+            </div>
         )
     }
 }

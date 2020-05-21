@@ -11,3 +11,9 @@
     transform: scale(1.05);
     cursor: pointer;
 }
+
+@media only screen and (max-width: 720px) {
+    .thumb {
+        max-height: 150px;
+    }
+}
