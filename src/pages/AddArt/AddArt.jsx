@@ -15,11 +15,13 @@ class AddArt extends Component {
         imageURL: '',
         image: null,
         progress: 0,
-        errMsg: ''
+        errMsg: '',
+        uploaded: false
     }
 
     handleChange = (e) => {
         this.setState({
+            uploaded: false,
             [e.target.name]: e.target.value
         });
     }
@@ -91,7 +93,10 @@ class AddArt extends Component {
                         date: '',
                         title: '',
                         description: '',
-                        imageURL: ''
+                        imageURL: '',
+                        neighborhood: 'Cherry Creek Trail',
+                        progress: 0,
+                        uploaded: true
                     }))
                 .then(console.log('art added!'))
 
@@ -123,11 +128,11 @@ class AddArt extends Component {
                 </div>
                 <div className='formContainer'>
                     <form onSubmit={this.handleSubmit}>
-                        <input type='text' placeholder='Title' name='title' onChange={this.handleChange} />
-                        <input type='text' placeholder='Artist' name='artist' onChange={this.handleChange} />
-                        <input type='date' name='date' onChange={this.handleChange} />
-                        <input type='text' placeholder='Description' name='description' onChange={this.handleChange} />
-                        <select name='neighborhood' onChange={this.handleChange}>
+                        <input type='text' placeholder='Title' name='title' onChange={this.handleChange} value={this.state.title} />
+                        <input type='text' placeholder='Artist' name='artist' onChange={this.handleChange} value={this.state.artist} />
+                        <input type='date' name='date' onChange={this.handleChange} value={this.state.date} />
+                        <input type='text' placeholder='Description' name='description' onChange={this.handleChange} value={this.state.description} />
+                        <select name='neighborhood' onChange={this.handleChange} value={this.state.neighborhood}>
                             <option value='Cherry Creek Trail'>Cherry Creek Trail</option>
                             <option value='Lincoln Park'>Lincoln Park</option>
                             <option value='Baker'>Baker</option>
@@ -143,6 +148,10 @@ class AddArt extends Component {
                         <button className='formButton' type='submit' disabled={this.isFormInvalid()}>Add</button>
                     </form>
                     <button className='formButton' onClick={this.handleLogOut}>Sign Out</button>
+                </div>
+                <div className='formContainer'>
+                    {this.state.uploaded ?
+                        <h3>Artwork successfully uploaded!</h3> : ''}
                 </div>
             </div>
         )
