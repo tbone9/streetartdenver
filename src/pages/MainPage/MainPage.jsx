@@ -10,6 +10,7 @@ function MainPage(props) {
     return (
         <div id='mainPageContainer'>
             <h1 id='pageTitle'>Denver Street Art</h1>
+            <h3>Select a Region</h3>
             <div className='hoodContainer'>
                 {hoods.map((hood, i) => (
                     <Link className='hoodLink' key={i} to={{ pathname: '/hoodPage', name: { hood } }}><Hood name={hood} key={i} /> </Link>

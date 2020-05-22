@@ -122,8 +122,8 @@ class AddArt extends Component {
                     <p>Instructions</p>
                     <ol>
                         <li>Every submission must have at least an image and neighborhood.</li>
-                        <li>Prior to submitting photos, make sure art is centered and cropped appropriately.</li>
-                        <li>Compress photo with <a href='https://tinyjpg.com/' target='_blank' rel='noopener noreferrer'>Tinyjpg.</a></li>
+                        <li>Prior to submitting photos, make sure the photo is centered and cropped appropriately, and compressed with <a href='https://tinyjpg.com/' target='_blank' rel='noopener noreferrer'>Tinyjpg.</a></li>
+                        <li>The description will also become the image 'alt' field, so write it appropriately.</li>
                     </ol>
                 </div>
                 <div className='formContainer'>

@@ -1,11 +1,22 @@
 footer {
     background: rgba(129, 129, 129, 0.486);
-
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    text-align: center;
 }
 footer span {
     color: white;
+    position: fixed;
 }
 
 footer a {
     color: white;
+    text-decoration: underline;
+}
+
+#admin {
+    right: 2%;
+    position: absolute;
+    text-decoration: underline;
 }

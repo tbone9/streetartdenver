@@ -41,10 +41,10 @@ function App() {
             </TransitionGroup>
           )} />
 
-
+          <Footer />
         </Router>
       </AuthProvider>
-      <Footer />
+
 
     </div>
   );

@@ -25,8 +25,6 @@ function GetArt(props) {
 
     }, []);
 
-    console.log(art)
-
     return art;
 };
 
@@ -34,14 +32,18 @@ function GetArt(props) {
 function HoodPage(props) {
 
     const art = GetArt(props);
+
     return (
         <div id='hoodPageContainer'>
             <h2>{props.location.name.hood}</h2>
-            <div id='hoodInnerContainer'>
-                {art.map(piece => (
-                    <ArtThumb piece={piece} />
 
-                ))}
+            <div id='hoodInnerContainer'>
+                {art.length ?
+                    art.map(piece => (
+                        <ArtThumb piece={piece} />
+                    ))
+                    : <h2>No artwork yet. Check back soon!</h2>}
+
             </div>
 
         </div>

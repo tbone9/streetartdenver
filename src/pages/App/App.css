@@ -55,4 +55,10 @@ h2 {
   letter-spacing: 2px;
 }
 
+a {
+  color: rgb(0, 13, 126);
+  font-weight: 700;
+  text-decoration: none;
+}
+
 

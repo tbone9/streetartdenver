@@ -58,3 +58,7 @@ progress {
     width: 100%;
 }
 
+p {
+    color: black !important; 
+}
+
