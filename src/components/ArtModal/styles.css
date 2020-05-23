@@ -49,6 +49,10 @@
     /* justify-content: space-between; */
 }
 
+#artDetails p {
+    color: white;
+}
+
 .modal-close-button {
   font-size: 1.4rem;
   font-weight: 700;
