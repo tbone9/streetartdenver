@@ -134,11 +134,9 @@ class AddArt extends Component {
                         <input type='text' placeholder='Description' name='description' onChange={this.handleChange} value={this.state.description} />
                         <select name='neighborhood' onChange={this.handleChange} value={this.state.neighborhood}>
                             <option value='Cherry Creek Trail'>Cherry Creek Trail</option>
-                            <option value='Lincoln Park'>Lincoln Park</option>
-                            <option value='Baker'>Baker</option>
-                            <option value='Speer'>Speer</option>
-                            <option value='LoDo'>LoDo</option>
-                            <option value='Five Points'>Five Points</option>
+                            <option value='SantaFe'>SantaFe/S.Broadway</option>
+                            <option value='Downtown'>Downtown</option>
+                            <option value='RiNo'>Rino/Five Points</option>
                         </select>
                         <input type='file' accept="image/*" onChange={this.handleImageChange} /> <br></br>
                         {this.state.errMsg ? <p>{this.state.errMsg}</p> :

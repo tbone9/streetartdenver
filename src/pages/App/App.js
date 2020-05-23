@@ -6,7 +6,11 @@ import About from '../About/About';
 import MainPage from '../MainPage/MainPage';
 import Login from '../Login/Login';
 import AddArt from '../AddArt/AddArt';
-import HoodPage from '../HoodPage/HoodPage';
+// import HoodPage from '../HoodPage/HoodPage';
+import CherryCreekTrail from '../Hoods/CherryCreekTrail';
+import Downtown from '../Hoods/Downtown';
+import SantaFe from '../Hoods/SantaFe';
+import RiNo from '../Hoods/RiNo';
 //----------- COMPONENTS ----------//
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
@@ -33,7 +37,14 @@ function App() {
                     <Route exact path='/' component={MainPage} />
                     <Route exact path='/about' component={About} />
                     <Route exact path='/login' component={Login} />
-                    <Route exact path='/hoodPage' component={HoodPage} />
+
+                    {/* Neighborhoods */}
+                    <Route exact path='/CherryCreekTrail' component={CherryCreekTrail} />
+                    <Route exact path='/RiNo' component={RiNo} />
+                    <Route exact path='/Downtown' component={Downtown} />
+                    <Route exact path='/SantaFe' component={SantaFe} />
+
+                    {/* Admin Area */}
                     <PrivateRoute exact path='/addart' component={AddArt} />
                   </Switch>
                 </main>
