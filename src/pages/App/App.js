@@ -6,11 +6,11 @@ import About from '../About/About';
 import MainPage from '../MainPage/MainPage';
 import Login from '../Login/Login';
 import AddArt from '../AddArt/AddArt';
-// import HoodPage from '../HoodPage/HoodPage';
 import CherryCreekTrail from '../Hoods/CherryCreekTrail';
 import Downtown from '../Hoods/Downtown';
 import SantaFe from '../Hoods/SantaFe';
 import RiNo from '../Hoods/RiNo';
+import UpdateArtPage from '../UpdateArtPage/UpdateArtPage';
 //----------- COMPONENTS ----------//
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
@@ -24,6 +24,7 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 function App() {
   return (
     <div className="App">
+
       <AuthProvider>
         <Router>
 
@@ -33,6 +34,7 @@ function App() {
             <TransitionGroup>
               <CSSTransition key={location.key} timeout={600} classNames='fade'>
                 <main>
+
                   <Switch location={location}>
                     <Route exact path='/' component={MainPage} />
                     <Route exact path='/about' component={About} />
@@ -46,6 +48,7 @@ function App() {
 
                     {/* Admin Area */}
                     <PrivateRoute exact path='/addart' component={AddArt} />
+                    <PrivateRoute exact path='/updateArt' component={UpdateArtPage} />
                   </Switch>
                 </main>
               </CSSTransition>

@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import './styles.css';
+import { AuthContext } from '../../Auth/Auth';
 
 function Header() {
+    const { currentUser } = useContext(AuthContext);
     return (
         <header>
             <nav>

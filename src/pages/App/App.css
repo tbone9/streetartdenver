@@ -20,6 +20,8 @@ Header {
 }
 
 main {
+  /* background: url('./denver2.png');
+  opacity: .5; */
   position: absolute;
   grid-area: main;
   height: 100%;

@@ -3,6 +3,7 @@ import '../formStyles.css';
 import app from '../../firebase';
 import firebase from '../../firebase';
 import { storage } from '../../firebase';
+import { Link } from 'react-router-dom';
 
 class AddArt extends Component {
 
@@ -124,6 +125,7 @@ class AddArt extends Component {
                         <li>Every submission must have at least an image and neighborhood.</li>
                         <li>Prior to submitting photos, make sure the photo is centered and cropped appropriately, and compressed with <a href='https://tinyjpg.com/' target='_blank' rel='noopener noreferrer'>Tinyjpg.</a></li>
                         <li>The description will also become the image 'alt' field, so write it appropriately.</li>
+                        <li>If you need to edit details of existing art, go <Link to={'/updateArt'}>here.</Link></li>
                     </ol>
                 </div>
                 <div className='formContainer'>
