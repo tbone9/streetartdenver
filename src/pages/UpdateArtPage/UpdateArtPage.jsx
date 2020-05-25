@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ArtThumb from '../../components/ArtThumb/ArtThumb';
 import firebaseService from '../../utils/firebaseService';
 import './styles.css';
+import { Link } from 'react-router-dom';
 
 // This component is a work in progress, but it will contain the update and delete logic for all the artwork. It is a protected component in the admin area
 
@@ -33,7 +34,8 @@ class UpdateArtPage extends Component {
 
     updateArt = (e, id) => {
         e.preventDefault();
-        console.log(id)
+        const art = firebaseService.updateArt(id);
+        console.log(art, 'ART');
     }
 
     componentWillUnmount() {
@@ -48,7 +50,8 @@ class UpdateArtPage extends Component {
                         <div key={piece.id}>
                             <img height='200' src={piece.imageURL} alt='' />
                             <button type='submit' onClick={(e) => this.removeArt(e, piece.id)}>X</button>
-                            <button type='submit' onClick={(e) => this.updateArt(e, piece.id)}>Update</button>
+                            <Link to={{ pathname: '/updateForm', state: { art: piece } }}>Update Art</Link>
+                            {/* <button type='submit' onClick={(e) => this.updateArt(e, piece.id)}>Update</button> */}
                         </div>
                     ))}
                 </div>

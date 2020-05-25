@@ -1,35 +1,27 @@
 import React, { Component } from 'react';
-import '../formStyles.css';
-import app from '../../firebase';
+// import app from '../../firebase';
 import firebase from '../../firebase';
 import { storage } from '../../firebase';
-import { Link } from 'react-router-dom';
+import firebaseService from '../../utils/firebaseService';
 
-class AddArt extends Component {
-
-    state = {
-        title: '',
-        artist: '',
-        date: '2020',
-        description: '',
-        neighborhood: 'Cherry Creek Trail',
-        imageURL: '',
-        image: null,
-        progress: 0,
-        errMsg: '',
-        uploaded: false
+class UpdateForm extends Component {
+    constructor(props) {
+        super(props);
+        const art = props.location.state.art;
+        this.state = {
+            id: art.id,
+            artist: art.artist,
+            date: art.date,
+            description: art.description,
+            neighborhood: art.neighborhood,
+            title: art.title,
+            imageURL: art.imageURL,
+            image: null,
+            progress: 0,
+            errMsg: '',
+            uploaded: false
+        }
     }
-
-    // handleChange updates state as inputs in the form change
-
-    handleChange = (e) => {
-        this.setState({
-            uploaded: false,
-            [e.target.name]: e.target.value
-        });
-    }
-
-    // handleImageChange updates state for when images are uploaded
 
     handleImageChange = e => {
         if (e.target.files[0]) {
@@ -48,8 +40,6 @@ class AddArt extends Component {
             }
         }
     }
-
-    // handleUpload actually uploads the image directly to firebase storage, as well as calculates the progress of the upload, and sets the imageURL state after upload
 
     handleUpload = async (image) => {
 
@@ -81,65 +71,41 @@ class AddArt extends Component {
 
     };
 
-    // handleSubmit handles the overall submission of each piece of art
-
-    handleSubmit = e => {
-        try {
-            e.preventDefault();
-            firebase
-                .firestore()
-                .collection('art')
-                .add({
-                    date: this.state.date,
-                    title: this.state.title,
-                    description: this.state.description,
-                    imageURL: this.state.imageURL,
-                    artist: this.state.artist,
-                    neighborhood: this.state.neighborhood
-                })
-                .then(() =>
-                    this.setState({
-                        date: '2020',
-                        title: '',
-                        description: '',
-                        imageURL: '',
-                        neighborhood: 'Cherry Creek Trail',
-                        progress: 0,
-                        uploaded: true
-                    }))
-                .then(console.log('art added!'))
-
-        } catch (error) {
-            console.log(error);
-        }
+    handleChange = (e) => {
+        this.setState({
+            uploaded: false,
+            [e.target.name]: e.target.value
+        });
     }
-
-    // Logs the user out
-
-    handleLogOut = () => {
-        app.auth().signOut();
-        this.props.history.push('/');
-    }
-
-    // Validates the form
 
     isFormInvalid = () => {
         return !(this.state.imageURL);
     }
 
+    handleSubmit = (e) => {
+        try {
+            e.preventDefault();
+            const artToUpdate = {
+                artist: this.state.artist,
+                title: this.state.title,
+                date: this.state.date,
+                description: this.state.description,
+                neighborhood: this.state.neighborhood,
+                imageURL: this.state.imageURL
+            }
+            console.log(artToUpdate, 'Art to update')
+            const updatedArt = firebaseService.updateArt(this.state.id, artToUpdate);
+            console.log(updatedArt, 'updated art')
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     render() {
         return (
-            <div className='formPageContainer'>
-                <h2>Add a Piece of Art</h2>
-                <div className='contentContainer'>
-                    <p>Instructions</p>
-                    <ol>
-                        <li>Every submission must have at least an image and neighborhood.</li>
-                        <li>Prior to submitting photos, make sure the photo is centered and cropped appropriately, ADJUST COLOR TO MAKE IT POP, and compress it with <a href='https://tinyjpg.com/' target='_blank' rel='noopener noreferrer'>Tinyjpg.</a></li>
-                        <li>The description will become the image 'alt' field, so write it appropriately.</li>
-                        <li>If you need to edit details of existing art, go <Link to={'/updateArt'}>here.</Link></li>
-                    </ol>
-                </div>
+            <div>
+                <h2>Update</h2>
                 <div className='formContainer'>
                     <form onSubmit={this.handleSubmit}>
                         <label htmlFor='title'>Title
@@ -181,17 +147,13 @@ class AddArt extends Component {
                                 <progress value={this.state.progress} max='100' />
                             }
                         </label>
-                        <button className='formButton' type='submit' disabled={this.isFormInvalid()}>Add</button>
+                        <button className='formButton' type='submit' disabled={this.isFormInvalid()}>Update</button>
                     </form>
-                    <button className='formButton' onClick={this.handleLogOut}>Sign Out</button>
-                </div>
-                <div className='formContainer'>
-                    {this.state.uploaded ?
-                        <h3>Artwork successfully uploaded!</h3> : ''}
+                    {/* <button className='formButton' onClick={this.handleLogOut}>Sign Out</button> */}
                 </div>
             </div>
         )
     }
 }
 
-export default AddArt;
+export default UpdateForm;

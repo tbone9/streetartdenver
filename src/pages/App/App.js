@@ -11,6 +11,7 @@ import Downtown from '../Hoods/Downtown';
 import SantaFe from '../Hoods/SantaFe';
 import RiNo from '../Hoods/RiNo';
 import UpdateArtPage from '../UpdateArtPage/UpdateArtPage';
+import UpdateForm from '../UpdateForm/UpdateForm';
 //----------- COMPONENTS ----------//
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
@@ -49,6 +50,7 @@ function App() {
                     {/* Admin Area */}
                     <PrivateRoute exact path='/addart' component={AddArt} />
                     <PrivateRoute exact path='/updateArt' component={UpdateArtPage} />
+                    <PrivateRoute exact path='/updateForm' component={UpdateForm} />
                   </Switch>
                 </main>
               </CSSTransition>

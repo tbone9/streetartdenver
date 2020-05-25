@@ -5,8 +5,10 @@
 
 .updateInnerContainer {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: auto;
     height: 80vh;
     overflow: scroll;
+    width: 100vw;
+    background: rgba(173, 216, 230, 0.692);
 }

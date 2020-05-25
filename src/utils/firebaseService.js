@@ -10,10 +10,25 @@ const getAllArt = async (hood) => {
         })
         artStuff = tempDoc;
     })
+
     return artStuff;
 }
 
+const updateArt = async (id, art) => {
+    const docToUpdate = await firebase.firestore().collection('art').doc(id).update({
+        artist: art.artist,
+        title: art.title,
+        description: art.description,
+        date: art.date,
+        imageURL: art.imageURL,
+        neighborhood: art.neighborhood
+    })
+
+    return docToUpdate;
+}
+
 export default {
-    getAllArt
+    getAllArt,
+    updateArt
 }
 

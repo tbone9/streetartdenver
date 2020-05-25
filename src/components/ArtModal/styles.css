@@ -50,6 +50,8 @@
 
 #artDetails p {
     color: white;
+    margin: 5px;
+    font-weight: 600;
 }
 
 .modal-close-button {
@@ -71,6 +73,10 @@
 
 #description {
     margin-top: 10%;
+}
+
+label {
+  color: black;
 }
 
 @media only screen and (max-width: 720px) {
