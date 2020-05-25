@@ -13,11 +13,11 @@ function MainPage(props) {
     ]
 
     const [viewport, setViewport] = useState({
-        latitude: 39.737322,
-        longitude: -104.987337,
+        latitude: 39.741409,
+        longitude: -104.984841,
         zoom: 13,
-        width: '100vw',
-        height: '100vh'
+        width: '100%',
+        height: '100%'
     });
 
     return (

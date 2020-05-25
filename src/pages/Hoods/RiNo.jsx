@@ -10,7 +10,7 @@ const RiNo = () => {
     return (
 
         <div id='hoodPageContainer'>
-            <h2>RiNo</h2>
+            <h2>RiNo and Five Points</h2>
 
             <div id='hoodInnerContainer'>
                 {art.length ?
