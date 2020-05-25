@@ -32,7 +32,7 @@ Admin Page
 
 ## Technology Used
 
-This project uses React JS for the front-end and Firebase Firestore/Storage for the back-end. The map is from [Mapbox](www.mapbox.com).
+This project uses React JS for the front-end and Firebase Firestore/Storage for the back-end. The map is from [Mapbox](https://www.mapbox.com).
 
 ## Future Improvements
 
