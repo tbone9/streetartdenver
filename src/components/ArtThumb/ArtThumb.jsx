@@ -3,6 +3,8 @@ import ArtModal from '../ArtModal/ArtModal';
 import hooks from '../../Hooks/hooks';
 import './styles.css'
 
+// This component acts as a thumbnail image for each piece of art on each region (hood) page. It gets passed the properties of each piece of art.
+
 const ArtThumb = (props) => {
     const { isShowing, toggle } = hooks.useModal();
     return (

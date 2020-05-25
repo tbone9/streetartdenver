@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import firebase from '../firebase';
 
+// useModal mounts and unmounts the artModal, which displays each piece of art
+
 const useModal = () => {
     const [isShowing, setIsShowing] = useState(false);
 
@@ -13,6 +15,8 @@ const useModal = () => {
         toggle,
     }
 };
+
+// getArt fetches all the art belonging to each region (hood), from firestore
 
 const GetArt = (hood) => {
     const [art, setArt] = useState([]);

@@ -1,6 +1,8 @@
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/storage';
+// This is all the configuration information for Firebase
+
 import '@firebase/firestore';
 import 'firebase/analytics';
 

@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './styles.css';
-import { AuthContext } from '../../Auth/Auth';
+
+// This component holds the navigation links
 
 function Header() {
-    const { currentUser } = useContext(AuthContext);
+
     return (
         <header>
             <nav>

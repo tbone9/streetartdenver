@@ -5,12 +5,16 @@ import ReactMapGL, { Marker } from 'react-map-gl';
 
 function MainPage(props) {
 
+    // hoods are all the details of each region (neighborhood)
+
     const hoods = [
         { name: 'Cherry Creek Trail', lat: 39.741018, lng: -104.999183, link: 'CherryCreekTrail' },
         { name: 'Downtown', lat: 39.750999, lng: -104.995061, link: 'Downtown' },
         { name: 'RiNo and Five Points', lat: 39.758492, lng: -104.987439, link: 'RiNo' },
         { name: 'SantaFe and South Broadway', lat: 39.728895, lng: -104.998437, link: 'SantaFe' },
     ]
+
+    // this sets the viewport of the map
 
     const [viewport, setViewport] = useState({
         latitude: 39.741409,
@@ -38,6 +42,7 @@ function MainPage(props) {
                     ))}
                 </ReactMapGL>
 
+                {/* I'm keeping the links below, in case the map doesn't work or I change my mind about it */}
 
                 {/* <Link className='hoodLink' to={{ pathname: '/CherryCreekTrail' }}><div className='hood'>Cherry Creek Trail</div></Link>
                 <Link className='hoodLink' to={{ pathname: '/SantaFe' }}><div className='hood'>Santa Fe and South Broadway</div></Link>

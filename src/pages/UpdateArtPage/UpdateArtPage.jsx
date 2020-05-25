@@ -3,6 +3,8 @@ import ArtThumb from '../../components/ArtThumb/ArtThumb';
 import firebaseService from '../../utils/firebaseService';
 import './styles.css';
 
+// This component is a work in progress, but it will contain the update and delete logic for all the artwork. It is a protected component in the admin area
+
 class UpdateArtPage extends Component {
     _isMounted = false;
 

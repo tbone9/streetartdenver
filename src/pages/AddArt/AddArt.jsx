@@ -20,12 +20,16 @@ class AddArt extends Component {
         uploaded: false
     }
 
+    // handleChange updates state as inputs in the form change
+
     handleChange = (e) => {
         this.setState({
             uploaded: false,
             [e.target.name]: e.target.value
         });
     }
+
+    // handleImageChange updates state for when images are uploaded
 
     handleImageChange = e => {
         if (e.target.files[0]) {
@@ -44,6 +48,8 @@ class AddArt extends Component {
             }
         }
     }
+
+    // handleUpload actually uploads the image directly to firebase storage, as well as calculates the progress of the upload, and sets the imageURL state after upload
 
     handleUpload = async (image) => {
 
@@ -74,6 +80,8 @@ class AddArt extends Component {
         );
 
     };
+
+    // handleSubmit handles the overall submission of each piece of art
 
     handleSubmit = e => {
         try {
@@ -106,10 +114,14 @@ class AddArt extends Component {
         }
     }
 
+    // Logs the user out
+
     handleLogOut = () => {
         app.auth().signOut();
         this.props.history.push('/');
     }
+
+    // Validates the form
 
     isFormInvalid = () => {
         return !(this.state.imageURL);
