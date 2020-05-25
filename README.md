@@ -1,68 +1,41 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Denver Street Art
 
-## Available Scripts
+Take a virtual tour of Denver's amazing street art. Select a region on the map and see the work that can be found there. 
 
-In the project directory, you can run:
+Regions include:
 
-### `npm start`
+1. RiNo and Five Points
+2. Downtown
+3. Cherry Creek Trail
+4. SantaFe and South Broadway
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+On each region's page, click each artwork to bring up a more detailed view of each work. 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+The 'Admin' area allows an authorized user to add, edit, and delete artwork. In an effort to control the quality of submissions, there is currently no way to add yourself as an authorized user, besides contacting the site creator directly.
 
-### `npm test`
+## Screenshots
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Home Page
+![Home Page](https://i.imgur.com/3XQig79.png)
 
-### `npm run build`
+Region Page
+![Region Page](https://i.imgur.com/JosqpIa.jpg)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Art Modal
+![Art Modal](https://i.imgur.com/gZCKC9Y.png)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+About Page
+![About Page](https://i.imgur.com/vwfaMy0.jpg)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Admin Page
+![Admin Page](https://i.imgur.com/8PG41j7.png)
 
-### `npm run eject`
+## Technology Used
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+This project uses React JS for the front-end and Firebase Firestore/Storage for the back-end. The map is from [Mapbox](www.mapbox.com).
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Future Improvements
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Adding a way for a user to suggest edits to each work, probably through a contact form. 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Adding a way for a user to submit work, with all the necessary details, directly to the administrator. The user would still not have direct access to the database. 
