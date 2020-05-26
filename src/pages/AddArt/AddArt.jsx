@@ -100,6 +100,7 @@ class AddArt extends Component {
                 .then(() =>
                     this.setState({
                         date: '2020',
+                        artist: '',
                         title: '',
                         description: '',
                         imageURL: '',
@@ -149,6 +150,7 @@ class AddArt extends Component {
                             <input type='text' placeholder='Artist' name='artist' onChange={this.handleChange} value={this.state.artist} /></label>
                         <label htmlFor='date'>Year
                             <select name='date' onChange={this.handleChange} value={this.state.date}>
+                                <option value={'Unknown'}>Unknown</option>
                                 <option value={2020}>2020</option>
                                 <option value={2019}>2019</option>
                                 <option value={2018}>2018</option>
