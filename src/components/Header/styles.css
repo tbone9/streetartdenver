@@ -24,7 +24,7 @@ header i {
 .dropdown:hover .dropdown-content {
     display: flex;
     flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.336);
+    background-color: rgba(0, 0, 0, 0.596);
     right: 0;
 }
 
@@ -52,7 +52,7 @@ header i {
 }
 
 .navLink:hover {
-    background: rgba(228, 228, 228, 0.74);
+    background: rgba(228, 228, 228, 0.897);
     color: rgb(24, 23, 23);
 }
 

@@ -25,6 +25,7 @@ main {
   grid-area: main;
   height: 100%;
   width: 100%;
+  overflow: scroll;
 }
 
 Footer {
@@ -33,7 +34,7 @@ Footer {
 }
 
 h2 {
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Shadows Into Light', sans-serif;
     letter-spacing: 2px;
 }
 

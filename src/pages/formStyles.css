@@ -10,10 +10,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
+    height: 60%;
     width: fit-content;
     color: white;
     background: rgba(255, 255, 255, 0.568);
+    overflow: scroll;
 }
 
 .formPageContainer p {
