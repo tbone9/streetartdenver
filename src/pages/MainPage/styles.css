@@ -1,6 +1,6 @@
-#pageTitle, h2 {
-    font-family: 'Shadows Into Light', cursive;
-    letter-spacing: 2px;
+
+.mainPageContainer {
+    /* border: 2px solid black; */
 }
 
 .hoodContainer {
@@ -10,6 +10,7 @@
     margin-top: 1%;
     text-align: center;
     border: 2px solid white;
+    z-index: 0;
 }
 
 h3 {
@@ -17,11 +18,7 @@ h3 {
     text-align: center;
 }
 
-#pageTitle {
-    color: white;
-    width: 100%;
-    text-align: center;
-}
+
 
 .hoodLink {
     text-decoration: none;

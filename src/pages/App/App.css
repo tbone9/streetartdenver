@@ -15,13 +15,12 @@
 
 Header {
   grid-area: header;
-  height: 100%;
-  width: 100%;
+  /* height: 100%;
+  width: 100%; */
 }
 
 main {
-  /* background: url('./denver2.png');
-  opacity: .5; */
+  
   position: absolute;
   grid-area: main;
   height: 100%;
@@ -31,6 +30,11 @@ main {
 Footer {
   grid-area: footer;
   text-align: center;
+}
+
+h2 {
+    font-family: 'Shadows Into Light', cursive;
+    letter-spacing: 2px;
 }
 
 .fade-appear

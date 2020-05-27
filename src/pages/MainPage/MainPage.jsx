@@ -21,12 +21,13 @@ function MainPage(props) {
         longitude: -104.984841,
         zoom: 13,
         width: '100%',
-        height: '100%'
+        height: '100%',
+
     });
 
     return (
         <div className='mainPageContainer'>
-            <h1 id='pageTitle'>Denver Street Art</h1>
+
             <h3>Select a Region</h3>
             <div className='hoodContainer'>
 

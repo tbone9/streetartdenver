@@ -5,7 +5,7 @@
     border: 2px solid white;
     margin: 2px;
     margin-top: 5px;
-    opacity: .85;
+    /* opacity: .85; */
 }
 .thumb:hover {
     transform: scale(1.05);

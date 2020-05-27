@@ -15,9 +15,10 @@ const ArtModal = ({ isShowing, hide, art }) => isShowing ? ReactDOM.createPortal
                     <h2>{art.title}</h2>
                     <img src={art.imageURL} alt={art.description}></img>
                     <div id='artDetails'>
-                        {console.log(art.date.length, 'modal art')}
-                        {art.artist ? <p>by: {art.artist}</p> : ''}
-                        {art.date ? <p>created: {art.date}</p> : ''}
+                        <div className='subDetails'>
+                            {art.artist ? <p>{art.artist}</p> : ''}
+                            {art.date === 'Unknown' ? '' : <p>{art.date}</p>}
+                        </div>
                         <p id='description'>{art.description}</p>
 
                     </div>
