@@ -15,7 +15,7 @@ function Header() {
             </NavLink>
 
             <nav className='dropdown'>
-                <i className="fa fa-bars fa-4x" aria-hidden="true"></i>
+                <i className="fa fa-bars fa-3x" aria-hidden="true"></i>
                 <div className='dropdown-content'>
                     <NavLink className='navLink'
                         exact

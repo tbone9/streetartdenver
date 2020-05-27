@@ -17,7 +17,7 @@ const Downtown = () => {
                     art.map(piece => (
                         <ArtThumb key={piece.id} piece={piece} />
                     ))
-                    : <h2>No artwork yet. Check back soon!</h2>}
+                    : <span>No artwork yet. Check back soon!</span>}
 
             </div>
 
