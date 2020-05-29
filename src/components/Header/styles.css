@@ -1,36 +1,43 @@
 header {
     z-index: 2;
+    text-align: center;
 }
 
 header i {
     color: white;
-    
+   
 }
 
 .dropdown {
     position: fixed;
     right: 10px;
     top: 5px;
-    
-    
+    transition: .5s;
 }
 
 .dropdown-content {
-    display: none;
+    /* display: none; */
     position: absolute;
-    
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.774);
+    right: 0;
+    width: 300px;
+    transition: .5s;
 }
 
-.dropdown:hover .dropdown-content {
+/* .dropdown:hover .dropdown-content {
     display: flex;
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.596);
     right: 0;
-}
+} */
 
 #pageTitle {
-    width: fit-content;
+    
+    display: inline;
     margin: 0 auto;
+    text-align: center;
     color: white;
     font-family: 'Shadows Into Light', cursive;
     font-size: 2.5em;

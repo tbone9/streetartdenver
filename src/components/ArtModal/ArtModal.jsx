@@ -12,14 +12,14 @@ const ArtModal = ({ isShowing, hide, art }) => isShowing ? ReactDOM.createPortal
         <div className='modal-overlay'>
             <div className='modal-wrapper'>
                 <div className='modal'>
-                    <h2>{art.title}</h2>
+                    {/* <h2>{art.title}</h2> */}
                     <img src={art.imageURL} alt={art.description}></img>
                     <div id='artDetails'>
                         <div className='subDetails'>
-                            {art.artist ? <p>{art.artist}</p> : ''}
+                            {art.artist ? <p>{art.artist}</p> : <p>Artist unknown.</p>}
                             {art.date === 'Unknown' ? '' : <p>{art.date}</p>}
                         </div>
-                        <p id='description'>{art.description}</p>
+                        {/* <p id='description'>{art.description}</p> */}
 
                     </div>
                     <button type='button' className="modal-close-button" onClick={hide}>Close</button>

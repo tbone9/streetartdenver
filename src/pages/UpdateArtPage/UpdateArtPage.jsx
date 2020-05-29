@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ArtThumb from '../../components/ArtThumb/ArtThumb';
+// import ArtThumb from '../../components/ArtThumb/ArtThumb';
 import firebaseService from '../../utils/firebaseService';
 import './styles.css';
 import { Link } from 'react-router-dom';
